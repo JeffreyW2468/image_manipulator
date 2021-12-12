@@ -7,7 +7,7 @@ import java.util.Random;
 import javax.imageio.ImageIO;
 public class ImageProcessing {
 	public static void main(String[] args) {
-    // The provided images are apple.jpg, flower.jpg, and kitten.jpg
+    // apple.png is provided
 		int[][] imageData = imgToTwoD("./apple.png");
     // Or load your own image using a URL!
 		//int[][] imageData = imgToTwoD("https://content.codecademy.com/projects/project_thumbnails/phaser/bug-dodger.png");
