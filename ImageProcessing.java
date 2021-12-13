@@ -8,7 +8,7 @@ import javax.imageio.ImageIO;
 public class ImageProcessing {
 	public static void main(String[] args) {
     // apple.png is provided
-		int[][] imageData = imgToTwoD("./apple.png");
+		int[][] imageData = imgToTwoD("./face.png");
     // Or load your own image using a URL!
 		//int[][] imageData = imgToTwoD("https://content.codecademy.com/projects/project_thumbnails/phaser/bug-dodger.png");
 		//viewImageData(imageData);
@@ -16,20 +16,20 @@ public class ImageProcessing {
 		twoDToImage(trimmed, "./trimmed_apple.jpg");*/
 
     int[][] negative = negativeColor(imageData);
-    twoDToImage(negative, "./negative_apple.jpg");
+    twoDToImage(negative, "./negative_image.jpg");
 
     int[][] stretched = stretchHorizontally(imageData);
-    twoDToImage(stretched, "./stretched_apple.jpg");
+    twoDToImage(stretched, "./stretched_image.jpg");
 
 		int[][] shrankVImg = shrinkVertically(imageData);
 
-		twoDToImage(shrankVImg, "./shrank_apple.jpg");
+		twoDToImage(shrankVImg, "./shrank_image.jpg");
 
     int[][] inverted = invertImage(imageData);
-    twoDToImage(inverted, "./inverted_apple.jpg");
+    twoDToImage(inverted, "./inverted_image.jpg");
 
     int[][] filtered = colorFilter(imageData, -100, -150, -70);
-    twoDToImage(filtered, "./filtered_apple.jpg");
+    twoDToImage(filtered, "./filtered_image.jpg");
 		// int[][] allFilters = stretchHorizontally(shrinkVertically(colorFilter(negativeColor(trimBorders(invertImage(imageData), 50)), 200, 20, 40)));
 		// Painting with pixels
     int[][] painting = paintRandomImage(new int[500][500]);
