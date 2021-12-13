@@ -8,7 +8,7 @@ import javax.imageio.ImageIO;
 public class ImageProcessing {
 	public static void main(String[] args) {
     // apple.png is provided
-		int[][] imageData = imgToTwoD("./face.png");
+		int[][] imageData = imgToTwoD("./apple.png");
     // Or load your own image using a URL!
 		//int[][] imageData = imgToTwoD("https://content.codecademy.com/projects/project_thumbnails/phaser/bug-dodger.png");
 		//viewImageData(imageData);
@@ -16,33 +16,33 @@ public class ImageProcessing {
 		twoDToImage(trimmed, "./trimmed_apple.jpg");*/
 
     int[][] negative = negativeColor(imageData);
-    twoDToImage(negative, "./negative_image.jpg");
+    twoDToImage(negative, "./images/negative_image.jpg");
 
     int[][] stretched = stretchHorizontally(imageData);
-    twoDToImage(stretched, "./stretched_image.jpg");
+    twoDToImage(stretched, "./images/stretched_image.jpg");
 
 		int[][] shrankVImg = shrinkVertically(imageData);
 
-		twoDToImage(shrankVImg, "./shrank_image.jpg");
+		twoDToImage(shrankVImg, "./images/shrank_image.jpg");
 
     int[][] inverted = invertImage(imageData);
-    twoDToImage(inverted, "./inverted_image.jpg");
+    twoDToImage(inverted, "./images/inverted_image.jpg");
 
     int[][] filtered = colorFilter(imageData, -100, -150, -70);
-    twoDToImage(filtered, "./filtered_image.jpg");
+    twoDToImage(filtered, "./images/filtered_image.jpg");
 		// int[][] allFilters = stretchHorizontally(shrinkVertically(colorFilter(negativeColor(trimBorders(invertImage(imageData), 50)), 200, 20, 40)));
 		// Painting with pixels
     int[][] painting = paintRandomImage(new int[500][500]);
-    twoDToImage(painting, "./random_image.jpg");
+    twoDToImage(painting, "./images/random_image.jpg");
 
     //rectangle
     int[] rgba = {140, 230, 20, 255};
     //array width height rowpos colpos color
     int[][] rect = paintRectangle(new int[300][300], 50, 50, 116, 116, getColorIntValFromRGBA(rgba));
 
-    twoDToImage(rect, "./rectangle.jpg");
+    twoDToImage(rect, "./images/rectangle.jpg");
 
-    twoDToImage(generateRectangles(new int[500][500], 1000), "./random_rectangles.jpg");
+    twoDToImage(generateRectangles(new int[500][500], 1000), "./images/random_rectangles.jpg");
 
 	}
 	// Image Processing Methods
